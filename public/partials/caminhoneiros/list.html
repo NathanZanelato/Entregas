@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h1 class="h2">Clientes</h1>
+    <h1 class="h2">Caminhoneiros</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <a ui-sref="clienteNovo" class="btn btn-sm btn-outline-success">
+        <a ui-sref="caminhoneiroNovo" class="btn btn-sm btn-outline-success">
             <span class="fas fa-plus-square"></span>
-            Novo cliente
+            Novo Caminhoneiro
         </a>
     </div>
 </div>
@@ -19,15 +19,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cliente in vm.clientes">
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.telefone}}</td>
-                <td>{{cliente.email}}</td>
-		        <td>{{cliente.cidade}}</td>
-
+            <tr ng-repeat="caminhoneiro in vm.caminhoneiros">
+                <td>{{caminhoneiro.nome}}</td>
+                <td>{{caminhoneiro.telefone}}</td>
+                <td>{{caminhoneiro.email}}</td>
+		        <td>{{caminhoneiro.cidade}}</td>
                 <td class="text-right">
-                    <a ui-sref="clienteEditar({id:cliente._id})"><span class="fas fa-edit"></span></a>
-                    <a href="#" ng-click="vm.excluir(cliente._id)"><span class="fas fa-trash-alt"></span></a>
+                    <a ui-sref="caminhoneiroEditar({id:caminhoneiro._id})"><span class="fas fa-edit"></span></a>
+                    <a href="#" ng-click="vm.excluir(caminhoneiro._id)"><span class="fas fa-trash-alt"></span></a>
                 </td>
             </tr>
         </tbody>

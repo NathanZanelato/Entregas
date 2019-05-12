@@ -4,26 +4,26 @@ angular.module('app')
 PedidoFormController.$inject = [
     'PedidoService', 
     'ClienteService',
-    'ProdutoService',
+    'CaminhoneiroService',
     '$stateParams', 
     '$state'
 ];
 
-function PedidoFormController (PedidoService, ClienteService, ProdutoService, $stateParams, $state){
+function PedidoFormController (PedidoService, ClienteService, CaminhoneiroService, $stateParams, $state){
     var vm = this;
     vm.pedido = {};
     vm.titulo = 'Novo pedido';
 
     vm.clientes = [];
-    vm.produtos = [];
+    vm.caminhoneiros = [];
 
     ClienteService.findAll()
         .then(function (data) {
             vm.clientes = data;
         });
-    ProdutoService.findAll()
+    CaminhoneiroService.findAll()
         .then(function (data) {
-            vm.produtos = data;
+            vm.caminhoneiros = data;
         });
 
     if ($stateParams.id) {

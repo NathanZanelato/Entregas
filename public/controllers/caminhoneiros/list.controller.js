@@ -1,16 +1,16 @@
 angular.module('app')
     .controller('CaminhoneiroListController', CaminhoneiroListController);
 
-CaminhoneiroListController.$inject = ['CaminheiroService'];
+CaminhoneiroListController.$inject = ['CaminhoneiroService'];
 
 function CaminhoneiroListController(CaminhoneiroService){
     var vm = this;
-    vm.clientes = [];
+    vm.caminhoneiros = [];
 
     function _load() {
         CaminhoneiroService.findAll()
             .then(function (dados) {
-                vm.clientes = dados;
+                vm.caminhoneiros = dados;
             });
     }
     _load();

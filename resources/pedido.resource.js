@@ -3,8 +3,9 @@ const pedidoModel = mongoose.model('pedidos');
 
 module.exports = function (app) {
     app.get('/pedidos', function (req, resp) {
-        pedidoModel.find({}, ['emissao', 'cliente', 'itens'], {sort: {emissao: 1}})
+        pedidoModel.find({}, ['emissao', 'cliente','caminhoneiro'], {sort: {emissao: 1}})
             .populate('cliente', 'documento nome email')
+			.populate('caminhoneiro', 'documento nome email')
             .then(
                 function (data) {
                     resp.status(200).send(data);
@@ -28,7 +29,7 @@ module.exports = function (app) {
     app.get('/pedidos/:id', function (req, resp) {
         pedidoModel.findById(req.params.id)
             .populate('cliente')
-            .populate('itens.produto')
+            .populate('caminhoneiro')
             .then(
                 function (data) {
                     if (!data) {

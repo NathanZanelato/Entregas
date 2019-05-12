@@ -13,15 +13,15 @@
             <tr>
                 <th>Emissão</th>
                 <th>Cliente</th>
-                <th class="text-center">Total</th>
-                <th></th>
+                <th>Caminhoneiro</th>
+				<th></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="pedido in vm.pedidos">
                 <td>{{pedido.emissao | date: 'dd/MM/yyyy HH:mm'}}</td>
                 <td>{{pedido.cliente.nome}}</td>
-                <td class="text-right">{{pedido.total | number:2}}</td>
+                <td>{{pedido.caminhoneiro.nome}}</td>
                 <td class="text-right">
                     <a ui-sref="pedidoEditar({id:pedido._id})"><span class="fas fa-edit"></span></a>
                     <a href="#" ng-click="vm.excluir(pedido._id)"><span class="fas fa-trash-alt"></span></a>

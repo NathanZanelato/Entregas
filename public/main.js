@@ -31,23 +31,23 @@ function ConfigMain ($stateProvider) {
         })
 		   .state({
             name: 'caminhoneiroList',
-            url: '/caminhoneiro',
+            url: '/caminhoneiros',
             templateUrl: '/partials/caminhoneiros/list.html',
-            controller: 'CaminhoneirosListController',
+            controller: 'CaminhoneiroListController',
             controllerAs: 'vm'
         })
         .state({
             name: 'caminhoneiroNovo',
             url: '/caminhoneiros/novo',
             templateUrl: '/partials/caminhoneiros/form.html',
-            controller: 'CaminhoneirosFormController',
+            controller: 'CaminhoneiroFormController',
             controllerAs: 'vm'
         })
         .state({
             name: 'caminhoneiroEditar',
             url: '/caminhoneiros/:id',
             templateUrl: '/partials/caminhoneiros/form.html',
-            controller: 'CaminhoneirosFormController',
+            controller: 'CaminhoneiroFormController',
             controllerAs: 'vm'
         })
         .state({
